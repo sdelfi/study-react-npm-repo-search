@@ -1,18 +1,13 @@
-import './App.css';
 import RepositoriesList from './components/Repositories/RepositoriesList';
 import SearchForm from './components/SearchForm/SearchForm';
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 
 function App() {
 	const [searchTerm, setSearchTerm] = useState<string>('');
 
-	const onSearch = useCallback((searchQuery: string) => {
-		setSearchTerm(searchQuery);
-	}, []);
-
 	return (
 		<div className="App">
-			<SearchForm onSearch={onSearch} />
+			<SearchForm onSearch={setSearchTerm} />
 			<RepositoriesList searchTerm={searchTerm} />
 		</div>
 	);

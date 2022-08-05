@@ -4,6 +4,9 @@ export interface IRepositoryPackage {
 	version: string;
 	description: string;
 	keywords: string[];
+	links: {
+		repository: string;
+	}
 }
 export interface IRepository {
 	package: IRepositoryPackage;

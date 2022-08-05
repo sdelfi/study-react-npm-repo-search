@@ -14,7 +14,7 @@ const SearchForm: FC<Props> = ({ onSearch }) => {
 	useEffect(() => {
 		const timeout = setTimeout(() => {
 			onSearch(query);
-		}, 100);
+		}, 300);
 
 		return () => {
 			clearTimeout(timeout);
