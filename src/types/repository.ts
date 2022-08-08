@@ -19,9 +19,3 @@ export type IRepository = {
   final: number;
   searchScore: number;
 };
-
-export type NpmRepoGetResponse = {
-  objects: IRepository[];
-  time: string;
-  total: number;
-};

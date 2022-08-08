@@ -20,8 +20,8 @@ const SearchResultsList: React.FC<Props> = ({ searchTerm }) => {
 
   return (
     <ul className={styles.list}>
-      {loading && <li className={styles.loading}>Loading</li>}
-      {error && <li className={styles.error}>Error {error}</li>}
+      {loading && <li className={styles.loading}>Searching</li>}
+      {error && <li className={styles.error}>Error: {error}</li>}
       {!loading &&
         !error &&
         repositories.length > 0 &&

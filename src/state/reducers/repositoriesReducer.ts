@@ -45,7 +45,5 @@ export const repositoriesDataSelect = (state: RootState) => state.repositories.d
 export const repositoriesErrorSelect = (state: RootState) => state.repositories.error;
 export const repositoriesLoadingSelect = (state: RootState) => state.repositories;
 
-// export const { searchRepositoriesSuccess, searchRepositories, searchRepositoriesError }
-// = repositoriesSlice.actions;
 export const repositoriesActions = repositoriesSlice.actions;
 export default repositoriesSlice.reducer;

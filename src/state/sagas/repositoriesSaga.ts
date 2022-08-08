@@ -1,12 +1,18 @@
 import axios, { AxiosResponse } from 'axios';
 import { call, put, takeEvery } from 'redux-saga/effects';
 
-import { NpmRepoGetResponse } from '../../types/repository';
+import { IRepository } from '../../types/repository';
 import { repositoriesActions } from '../reducers/repositoriesReducer';
 
 export type RepositoriesFetchType = {
   payload: string;
   type: string;
+};
+
+type NpmRepoGetResponse = {
+  objects: IRepository[];
+  time: string;
+  total: number;
 };
 
 function* workGetRepositoriesFetch({ payload }: RepositoriesFetchType) {
