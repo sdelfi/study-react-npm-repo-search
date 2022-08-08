@@ -16,14 +16,13 @@
   font-weight: 500;
   font-size: 16px;
   text-decoration: none;
-  color: rgb(112, 50, 246);
+  color: rgb(112 50 246);
   background-color: #fff;
-
   transition: background-color .3s ease-in-out, color .3s ease-in-out;
 }
 
 .repoName:hover {
-  background-color: rgb(112, 50, 246);
+  background-color: rgb(112 50 246);
   color: #fff;
 }
 

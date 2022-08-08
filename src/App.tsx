@@ -7,7 +7,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('');
 
   return (
-    <div className="App">
+    <div className="app">
       <h1 className="project-title">NPM package search</h1>
       <SearchForm onSearch={setSearchTerm} />
       <SearchResultsList searchTerm={searchTerm} />
