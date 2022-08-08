@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/react-npm-repo-search/static/css/main.44422839.css",
-    "main.js": "/react-npm-repo-search/static/js/main.ffc114c4.js",
-    "index.html": "/react-npm-repo-search/index.html",
-    "main.44422839.css.map": "/react-npm-repo-search/static/css/main.44422839.css.map",
-    "main.ffc114c4.js.map": "/react-npm-repo-search/static/js/main.ffc114c4.js.map"
+    "main.css": "/study-react-npm-repo-search/static/css/main.44422839.css",
+    "main.js": "/study-react-npm-repo-search/static/js/main.ffc114c4.js",
+    "index.html": "/study-react-npm-repo-search/index.html",
+    "main.44422839.css.map": "/study-react-npm-repo-search/static/css/main.44422839.css.map",
+    "main.ffc114c4.js.map": "/study-react-npm-repo-search/static/js/main.ffc114c4.js.map"
   },
   "entrypoints": [
     "static/css/main.44422839.css",
