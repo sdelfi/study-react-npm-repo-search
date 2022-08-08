@@ -1,0 +1,39 @@
+.list {
+  padding: 1rem 0;
+  margin: 0;
+}
+
+.listItem {
+  list-style: none;
+  margin-bottom: 5px;
+}
+
+.repoName {
+  display: block;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  margin: 0;
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+  color: rgb(112, 50, 246);
+  background-color: #fff;
+
+  transition: background-color .3s ease-in-out, color .3s ease-in-out;
+}
+
+.repoName:hover {
+  background-color: rgb(112, 50, 246);
+  color: #fff;
+}
+
+.loading {
+  margin: 0;
+  text-align: center;
+}
+
+.error {
+  margin: 0;
+  text-align: center;
+  color: red;
+}

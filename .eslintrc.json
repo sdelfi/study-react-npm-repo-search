@@ -9,9 +9,9 @@
         "es2021": true
     },
     "extends": [
-        "eslint:recommended",
+        "react-app",
         "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:prettier/recommended"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -22,16 +22,18 @@
         "sourceType": "module"
     },
     "plugins": [
+        "@typescript-eslint",
         "react",
-        "@typescript-eslint"
+        "jest",
+        "simple-import-sort"
     ],
     "rules": {
-        "indent": [
-            "error",
-            4
-        ],
+        "simple-import-sort/exports": "error",
+        "simple-import-sort/imports": "error",
+        "no-console": ["warn", { "allow": ["warn", "error"] }],
+        "indent": "off",
         "linebreak-style": [
-            "error",
+            "warn",
             "unix"
         ],
         "quotes": [

@@ -1,12 +1,13 @@
-import axios, { AxiosResponse } from 'axios'
-import { takeEvery, put, call } from 'redux-saga/effects'
-import { repositoriesActions } from '../reducers/repositoriesReducer'
-import { NpmRepoGetResponse } from '../../types/repository'
+import axios, { AxiosResponse } from 'axios';
+import { call, put, takeEvery } from 'redux-saga/effects';
+
+import { NpmRepoGetResponse } from '../../types/repository';
+import { repositoriesActions } from '../reducers/repositoriesReducer';
 
 export type RepositoriesFetchType = {
-    payload: string
-    type: string
-}
+  payload: string;
+  type: string;
+};
 
 // type SliceActions<T> = {
 // 	[K in keyof T]: T[K] extends (...args: any[]) => infer A ? A : never;
@@ -23,33 +24,27 @@ export type RepositoriesFetchType = {
 // export type SagaGenerator<T = unknown, TReturn = any, TNext = any> = Generator<T, TReturn, TNext>;
 
 function* workGetRepositoriesFetch({ payload }: RepositoriesFetchType) {
-    // const reqData = Object.assign({}, payload, { cancelToken: source.token });
+  // const reqData = Object.assign({}, payload, { cancelToken: source.token });
 
-    try {
-        const repositoriesRequest: AxiosResponse<NpmRepoGetResponse> =
-            yield call(() =>
-                axios.get(
-                    `https://registry.npmjs.org/-/v1/search?text=${payload}`
-                )
-            )
+  try {
+    const repositoriesRequest: AxiosResponse<NpmRepoGetResponse> = yield call(() =>
+      axios.get(`https://registry.npmjs.org/-/v1/search?text=${payload}`)
+    );
 
-        const repositories = repositoriesRequest.data.objects.slice(0, 10)
+    const repositories = repositoriesRequest.data.objects.slice(0, 10);
 
-        yield put(repositoriesActions.searchRepositoriesSuccess(repositories))
-    } catch (error) {
-        let message = 'Something went wrong'
-        if (error instanceof Error) {
-            message = error.message
-        }
-        yield put(repositoriesActions.searchRepositoriesError(message))
+    yield put(repositoriesActions.searchRepositoriesSuccess(repositories));
+  } catch (error) {
+    let message = 'Something went wrong';
+    if (error instanceof Error) {
+      message = error.message;
     }
+    yield put(repositoriesActions.searchRepositoriesError(message));
+  }
 }
 
 function* repositoriesSaga() {
-    yield takeEvery(
-        repositoriesActions.searchRepositories.toString(),
-        workGetRepositoriesFetch
-    )
+  yield takeEvery(repositoriesActions.searchRepositories.toString(), workGetRepositoriesFetch);
 }
 
-export default repositoriesSaga
+export default repositoriesSaga;

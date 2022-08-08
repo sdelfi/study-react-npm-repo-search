@@ -1,9 +1,9 @@
 .form {
-  padding: 1rem;
+  /* padding: 1rem; */
   padding-bottom: 0;
 }
 
-.form input {
+.formInput {
   padding: 5px;
   width: 100%;
   font-size: 16px;
