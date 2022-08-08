@@ -28,11 +28,13 @@
 }
 
 .loading {
+  list-style: none;
   margin: 0;
   text-align: center;
 }
 
 .error {
+  list-style: none;
   margin: 0;
   text-align: center;
   color: red;

@@ -20,6 +20,7 @@ const repositoriesSlice = createSlice({
   name: 'repositories',
   initialState,
   reducers: {
+    // Disable eslint check because we use this payload in the redux-saga effect
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     searchRepositories(state, action: PayloadAction<string>) {
       state.loading = true;

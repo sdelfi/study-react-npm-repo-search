@@ -1,24 +1,22 @@
 import React, { useEffect } from 'react';
 
-import { repositoriesActions, repositoriesSelect, useAppDispatch, useAppSelector } from '../../state';
+import { createActionsHook } from '../../hooks/useActions';
+import { repositoriesActions, repositoriesSelect, useAppSelector } from '../../state';
 import styles from './SearchResultsList.module.css';
 
 interface Props {
   searchTerm: string;
 }
 
+const useActions = createActionsHook<typeof repositoriesActions>(repositoriesActions);
+
 const SearchResultsList: React.FC<Props> = ({ searchTerm }) => {
-  const dispatch = useAppDispatch();
   const { loading, error, data: repositories } = useAppSelector(repositoriesSelect);
-  // const { searchRepositoriesSuccess, searchRepositories } = useActions();
+  const { searchRepositories } = useActions();
 
   useEffect(() => {
-    if (searchTerm === '') {
-      dispatch(repositoriesActions.searchRepositoriesSuccess([]));
-    } else {
-      dispatch(repositoriesActions.searchRepositories(searchTerm));
-    }
-  }, [dispatch, searchTerm]);
+    searchRepositories(searchTerm);
+  }, [searchTerm, searchRepositories]);
 
   return (
     <ul className={styles.list}>

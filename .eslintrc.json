@@ -32,6 +32,7 @@
         "simple-import-sort/imports": "error",
         "no-console": ["warn", { "allow": ["warn", "error"] }],
         "indent": "off",
+        "max-len": ["error", 120, 2],
         "linebreak-style": [
             "warn",
             "unix"

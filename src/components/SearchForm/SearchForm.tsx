@@ -1,5 +1,6 @@
 import React, { FC, useCallback, useEffect, useState } from 'react';
 
+import useDebounce from '../../hooks/useDebounce';
 import styles from './SearchForm.module.css';
 
 interface Props {
@@ -8,27 +9,26 @@ interface Props {
 
 const SearchForm: FC<Props> = ({ onSearch }) => {
   const [query, setQuery] = useState('');
+  const debouncedValue = useDebounce(query, 300);
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      onSearch(query);
-    }, 300);
-
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, [query, onSearch]);
-
-  // useDebounce(); custom hook
-
-  const onSearchHandler: React.ChangeEventHandler<HTMLInputElement> = useCallback((e) => {
+  const onInputChangeHandler: React.ChangeEventHandler<HTMLInputElement> = useCallback((e) => {
     e.preventDefault();
     setQuery(e.target.value);
   }, []);
 
+  useEffect(() => {
+    onSearch(debouncedValue);
+  }, [debouncedValue, onSearch]);
+
   return (
     <form className={styles.form}>
-      <input className={styles.formInput} type="text" value={query} onChange={onSearchHandler} placeholder="Enter search string" />
+      <input
+        className={styles.formInput}
+        type="text"
+        value={query}
+        onChange={onInputChangeHandler}
+        placeholder="Enter search string"
+      />
     </form>
   );
 };
