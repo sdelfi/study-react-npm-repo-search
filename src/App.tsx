@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div className="app">
-      <h1 className="project-title">NPM package search</h1>
+      <h1 className="projectTitle">NPM package search</h1>
       <SearchForm onSearch={setSearchTerm} />
       <SearchResultsList searchTerm={searchTerm} />
     </div>
