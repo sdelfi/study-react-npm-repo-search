@@ -2,7 +2,7 @@
   "name": "npm-repo-search-redux",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sdelfi.github.io/react-npm-repo-search",
+  "homepage": "https://sdelfi.github.io/study-react-npm-repo-search",
   "dependencies": {
     "axios": "^0.27.2",
     "react": "^18.2.0",

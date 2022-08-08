@@ -1,11 +1,10 @@
 # NPM package search
 
-Training project. \
 Search for packages in the NPM repository.
 
-Technologies used: React, Typescript, Redux, Redux-Saga
+## <a href="https://sdelfi.github.io/study-react-npm-repo-search/" target="_blank">Live demo</a>
 
-# How to run
+# Get started
 
 1. Install dependecies first
 
@@ -17,26 +16,27 @@ Technologies used: React, Typescript, Redux, Redux-Saga
 
 The project will be built in the build folder
 
-
 # Available commands
-## Run the app in the development mode   
-   
+
+## Run the app in the development mode
+
 `npm start`
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
------
-
+---
 
 ## Run tests
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
------
+---
 
-## Build 
+## Build
+
 `npm run build`
 
 Builds the app for production to the `build` folder.\
@@ -45,7 +45,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
------
+---
 
 ## Lint project
 
@@ -57,7 +57,7 @@ Lint project with the `eslint` tool
 
 Lint project with the `eslint` tool and fix possible problems
 
------
+---
 
 ## Eject app
 
