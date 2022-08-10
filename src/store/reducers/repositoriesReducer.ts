@@ -4,13 +4,15 @@ import { createSlice } from '@reduxjs/toolkit';
 import { IRepository } from '../../types/repository';
 import { RootState } from '..';
 
-interface RepositoriesReducerState {
+export interface RepositoriesReducerState {
+  query: string;
   loading: boolean;
   data: IRepository[];
   error: string | null;
 }
 
 const initialState = {
+  query: '',
   data: [],
   loading: false,
   error: null,
@@ -21,8 +23,8 @@ const repositoriesSlice = createSlice({
   initialState,
   reducers: {
     // Disable eslint check because we use this payload in the redux-saga effect
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     searchRepositories(state, action: PayloadAction<string>) {
+      state.query = action.payload;
       state.loading = true;
       state.error = null;
       state.data = [];

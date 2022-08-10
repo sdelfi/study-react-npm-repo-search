@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 import { createActionsHook } from '../../hooks/useActions';
-import { repositoriesActions, repositoriesSelect, useAppSelector } from '../../state';
+import { repositoriesActions, repositoriesSelect, useAppSelector } from '../../store';
 import styles from './SearchResultsList.module.css';
 
 interface Props {
